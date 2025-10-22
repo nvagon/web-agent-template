@@ -1,0 +1,2 @@
+-e ./autoppia_iwa_module
+fastapi[standard]

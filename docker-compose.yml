@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  web_agent:
+    build: .
+    container_name: web_agent
+    environment:
+      - PORT=${PORT:-8000}   # default 8000 if PORT not set
+      - HOST=0.0.0.0
+    ports:
+      - "${PORT:-8000}:8000"
+    volumes:
+      - .:/app
+    restart: unless-stopped

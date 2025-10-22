@@ -1,0 +1,3 @@
+[submodule "autoppia_iwa_module"]
+	path = autoppia_iwa_module
+	url = https://github.com/autoppia/autoppia_iwa.git
