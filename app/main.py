@@ -1,8 +1,13 @@
 from fastapi import FastAPI
-
-from autoppia_iwa.src.data_generation.domain.classes import Task
+from pydantic import BaseModel
 
 app = FastAPI(title="Autoppia Agent API")
+
+class Task(BaseModel):
+    id: str
+    prompt: str
+    url: str
+    html: str
 
 @app.get("/health")
 async def health_check():

@@ -4,14 +4,8 @@ FROM python:3.11-slim
 # Set working directory
 WORKDIR /app
 
-# Install git (required for submodules)
-RUN apt-get update && apt-get install -y git && rm -rf /var/lib/apt/lists/*
-
 # Copy source code
 COPY . .
-
-# Initialize and update submodules
-RUN git submodule update --init
 
 # Install Python deps
 RUN pip install --no-cache-dir -r requirements.txt
